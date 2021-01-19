@@ -29,6 +29,7 @@
     "dev": "nodemon src/",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit"
+
   },
   "standard": {
     "env": [
