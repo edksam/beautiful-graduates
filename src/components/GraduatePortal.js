@@ -1,16 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { GraduateContext } from "../context/graduate-context";
-import {
-  Card,
-  Space,
-  Tag,
-  Collapse,
-  Row,
-  Divider,
-  Typography,
-  Button,
-} from "antd";
+import { Card, Space, Tag, Collapse, Row, Divider, Typography } from "antd";
 import { createFromIconfontCN } from "@ant-design/icons";
 import {
   GithubOutlined,

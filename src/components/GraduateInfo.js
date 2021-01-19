@@ -21,7 +21,6 @@ import {
   LinkedinOutlined,
   FilePdfOutlined,
   GlobalOutlined,
- 
 } from "@ant-design/icons";
 
 const { useContext } = React;
@@ -67,93 +66,92 @@ const GraduateInfo = ({ graduate }) => {
 
   return (
     <>
-      {/* <div className="site-page-header-ghost-wrapper"> */}
-      <PageHeader
-        ghost={false}
-        style={{ width: 600 }}
-        level={3}
-        onBack={() => window.history.back()}
-        title={graduate.fullname}
-        subTitle={graduate.current_location}
-        extra={[]}
-      >
-        <Descriptions size="small" column={3}>
-          <Descriptions.Item label="Profile Created">
-            : {graduate.createdAt}
-          </Descriptions.Item>
-
-        </Descriptions>
-      </PageHeader>
-      {/* </div> */}
-      <Row>
-        <Col span={12} offset={6}>
-          <Card
-            hoverable
-            title={<Title level={4}>{graduate.headline}</Title>}
-            bordered={false}
-            style={{ width: 800, marginTop: 20 }}
-
-          >
-            <Meta
-              title={graduate.headline}
-              description={graduate.current_location}
-            />
-            <hr />
-            <p>{graduate.languages} </p>
-            <Space>
-              <p>{graduate.email}</p>
-
-              <p>{graduate.githubId}</p>
-            </Space>
-            <Space>
-              <Tag color={"green"}>
-                {graduate.full_time ? "Full Time" : null}
-              </Tag>
-              <Tag color={"green"}>
-                {graduate.part_time ? "Part Time" : null}
-              </Tag>
-            </Space>
-            <Divider orientation="left"></Divider>
-            <Row>
+      <div className="site-page-header-ghost-wrapper">
+        <PageHeader
+          ghost={false}
+          // style={{ width: 600 }}
+          level={3}
+          onBack={() => window.history.back()}
+          title={graduate.fullname}
+          subTitle={graduate.current_location}
+          extra={[]}
+        >
+          <Descriptions size="small" column={3}></Descriptions>
+        </PageHeader>
+        {/* </div> */}
+        <Row>
+          <Col span={12} offset={6}>
+            <Card
+              hoverable
+              title={<Title level={4}>{graduate.headline}</Title>}
+              bordered={false}
+              style={{ width: 800, marginTop: 20 }}
+            >
+              <Meta
+                title={graduate.headline}
+                description={graduate.current_location}
+              />
+              <hr />
+              <p>{graduate.languages} </p>
               <Space>
-                <a href={graduate.githubId}>
-                  <GithubOutlined
+                <p>{graduate.email}</p>
+
+                <p>{graduate.githubId}</p>
+              </Space>
+              <Space>
+                <Tag color={"green"}>
+                  {graduate.full_time ? "Full Time" : null}
+                </Tag>
+                <Tag color={"green"}>
+                  {graduate.part_time ? "Part Time" : null}
+                </Tag>
+              </Space>
+              <Divider orientation="left"></Divider>
+              <Row>
+                <Space>
+                  <a href={graduate.githubId}>
+                    <GithubOutlined
+                      style={{
+                        FontSize: "60px",
+                        color: "black",
+                        width: "10rem",
+                      }}
+                    />
+                  </a>
+
+                  <LinkedinOutlined
                     style={{ FontSize: "60px", color: "black", width: "10rem" }}
                   />
-                </a>
+                </Space>
+              </Row>
+              <br />
+              <Row>
+                <Space>
+                  <FilePdfOutlined
+                    label="CV"
+                    style={{ fontSize: "40px", color: "black", width: "10rem" }}
+                  />
 
-                <LinkedinOutlined
-                  style={{ FontSize: "60px", color: "black", width: "10rem" }}
-                />
-              </Space>
-            </Row>
-            <br />
-            <Row>
-              <Space>
-                <FilePdfOutlined
-                  label="CV"
-                  style={{ fontSize: "40px", color: "black", width: "10rem" }}
-                />
+                  <GlobalOutlined
+                    label="Website"
+                    style={{ fontSize: "40px", color: "black", width: "10rem" }}
+                  />
+                </Space>
+              </Row>
+              <br />
+              <Row>
+                <Space>
+                  <p>{parse(graduate.resume_text)}</p>
 
-                <GlobalOutlined
-                  label="Website"
-                  style={{ fontSize: "40px", color: "black", width: "10rem" }}
-                />
-              </Space>
-            </Row>
-            <br />
-            <Row>
-              <Space>
-                <p>{parse(graduate.resume_text)}</p>
-
-                <Button type="primary" onClick={pdfChange}>
-                  Download CV Pdf
-                </Button>
-              </Space>
-            </Row>
-          </Card>
-        </Col>
-      </Row>
+                  <Button type="primary" onClick={pdfChange}>
+                    Download CV Pdf
+                  </Button>
+                </Space>
+              </Row>
+            </Card>
+          </Col>
+        </Row>
+      </div>
     </>
   );
 };
