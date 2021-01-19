@@ -5,7 +5,7 @@ import { Menu } from "antd";
 const LoginButton = () => {
   const { loginWithRedirect } = useAuth0();
   return (
-    <Menu.Item onClick={() => loginWithRedirect()}>Student? Log In</Menu.Item>
+    <Menu.Item onClick={() => loginWithRedirect()}>CYF Graduate? Log In</Menu.Item>
   );
 };
 
