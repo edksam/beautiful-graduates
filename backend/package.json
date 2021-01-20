@@ -29,7 +29,7 @@
     "dev": "nodemon src/",
     "start": "node src/",
     "mocha": "mocha test/ --recursive --exit",
-    "heroku-postbuild": "cd .. && npm install && npm run build"
+    
 
   },
   "standard": {
