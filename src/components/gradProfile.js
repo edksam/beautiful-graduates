@@ -42,7 +42,7 @@ const GraduateProfile = ({ graduate }) => {
   const deleteGraduate = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3030/graduates/${id}`,
+        `/graduates/${id}`,
       );
       dispatch({
         type: "DELETE_GRADUATE",

@@ -4,10 +4,9 @@ import GraduateAdd from "../components/graduate-add";
 import { flashErrorMessage } from "../components/flash-message";
 import { GraduateContext } from "../context/graduate-context";
 
-// import useGraduatesData from "../utils/useGraduateData";
 
 const GraduateAddPage = ({ match }) => {
-  // const [graduates] = useGraduatesData();
+
   const [state, dispatch] = useContext(GraduateContext);
   const [loading, setLoading] = useState(true);
 
@@ -18,7 +17,7 @@ const GraduateAddPage = ({ match }) => {
       const fetchData = async () => {
         try {
           const response = await axios.get(
-            `http://localhost:3030/graduates/${_id}`,
+            `/graduates/${_id}`,
           );
           dispatch({
             type: "FETCH_GRADUATE",
