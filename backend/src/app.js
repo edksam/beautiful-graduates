@@ -44,6 +44,8 @@ app.configure(socketio());
 
 app.configure(mongoose);
 
+
+
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
 app.configure(authentication);
@@ -51,20 +53,13 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
-
+app.use("*", express.static(app.get("public")));
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
 
-//multer
-//File Upload localStorage
-
-
-app.get("/", function (req, res) {
-  res.sendFile(__dirname + "/index.html");
-});
 
 
 
