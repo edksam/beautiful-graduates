@@ -6,7 +6,7 @@ import axios from "axios";
 import { GraduateContext } from "../context/graduate-context";
 import { flashErrorMessage } from "../components/flash-message";
 import { useAuth0 } from "@auth0/auth0-react";
-
+import { moment } from "moment";
 import {
   Card,
   Space,
@@ -41,9 +41,7 @@ const GraduateProfile = ({ graduate }) => {
   //Delete Graduate
   const deleteGraduate = async (id) => {
     try {
-      const response = await axios.delete(
-        `/graduates/${id}`,
-      );
+      const response = await axios.delete(`/graduates/${id}`);
       dispatch({
         type: "DELETE_GRADUATE",
         payload: response.data,
@@ -92,12 +90,12 @@ const GraduateProfile = ({ graduate }) => {
                   : {graduate.createdAt}
                 </Descriptions.Item>
 
-                <Descriptions.Item label="Creation Time">
+                {/* <Descriptions.Item label="Creation Time">
                   2017-01-10
-                </Descriptions.Item>
-                <Descriptions.Item label="Effective Time">
+                </Descriptions.Item> */}
+                {/* <Descriptions.Item label="Effective Time">
                   2017-10-10
-                </Descriptions.Item>
+                </Descriptions.Item> */}
               </Descriptions>
             </PageHeader>
           </div>
